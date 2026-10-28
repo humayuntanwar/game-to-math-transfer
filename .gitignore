@@ -1,4 +1,2 @@
-run.log
-tm.log
-pt.log
+*.log
 __pycache__/
