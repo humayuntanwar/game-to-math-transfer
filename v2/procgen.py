@@ -14,6 +14,7 @@ the landscape regimes V1 lacked (plateaus, deception, wide/narrow branching).
 Same interface as ../domains.py: .start, .h(s), .expand(s) -> [(child, h)].
 """
 import random
+import zlib
 
 
 class GameType:
@@ -122,7 +123,8 @@ class LatticeGame:
         for a, c0, c1, gap, gw in self.T.barriers:
             if min(c0, c1) <= p[a] <= max(c0, c1) and max(abs(x - g) for j, (x, g) in enumerate(zip(p, gap)) if j != a) > gw:
                 return True
-        return (hash((self.T.seed, p)) % 1000) < self.T.rho * 1000
+        # deterministic across processes (built-in hash() of str is salted per process)
+        return zlib.crc32(f"{self.T.seed}|{p}".encode()) % 1000 < self.T.rho * 1000
 
     def h(self, p):
         return -(-sum(w * abs(x) for w, x in zip(self.T.w, p)) // self.T.q)

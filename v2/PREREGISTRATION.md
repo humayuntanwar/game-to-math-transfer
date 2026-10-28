@@ -48,3 +48,14 @@ T = greedy cost − controller cost; meanT = mean over the 3 math domains, avera
 
 The headline hypothesis counts as **supported only if P1, P2 and P3 all hold**.
 All results will be published whatever they show.
+
+## Addendum (before any result was analyzed)
+
+The first launch was killed by a container restart after 31 of 45 runs. While
+checking whether resuming would be faithful, I found that lattice-game obstacles
+were placed with Python's built-in `hash()` of a string, which is salted per
+process. Runs after a restart would therefore have seen different game layouts
+than runs before it. Fix: obstacles now use `zlib.crc32` (deterministic), and the
+whole grid is rerun from scratch with `PYTHONHASHSEED=0`. The aborted partial
+results are kept, **unanalyzed and unread**, in `results_v2_ABORTED_unanalyzed.json`.
+Hypotheses, design, predictions and analysis code are unchanged.
