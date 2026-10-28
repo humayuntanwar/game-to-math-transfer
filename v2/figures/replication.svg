@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Inter, Helvetica, Arial, sans-serif">
+<rect width="1600" height="900" fill="#fcfcfb"/>
+<text x="80" y="92" font-size="40" font-weight="700" fill="#0b0b0b">My hypothesis passed its pre-registered test. Then it didn’t replicate.</text>
+<text x="80" y="140" font-size="24" fill="#52514e">Effect of in-context regime conditioning × game diversity on zero-shot transfer to math (per seed).</text>
+<text x="80" y="172" font-size="24" fill="#52514e">Dot = one training seed; bar = mean. Positive = the hypothesis’s predicted direction.</text>
+<line x1="740.0" y1="240" x2="740.0" y2="700" stroke="#e6e5e1" stroke-width="1"/>
+<text x="740.0" y="734" font-size="20" fill="#52514e" text-anchor="middle">-0.5</text>
+<line x1="940.0" y1="240" x2="940.0" y2="700" stroke="#8a8984" stroke-width="2"/>
+<text x="940.0" y="734" font-size="20" fill="#52514e" text-anchor="middle">0</text>
+<line x1="1140.0" y1="240" x2="1140.0" y2="700" stroke="#e6e5e1" stroke-width="1"/>
+<text x="1140.0" y="734" font-size="20" fill="#52514e" text-anchor="middle">+0.5</text>
+<line x1="1340.0" y1="240" x2="1340.0" y2="700" stroke="#e6e5e1" stroke-width="1"/>
+<text x="1340.0" y="734" font-size="20" fill="#52514e" text-anchor="middle">+1</text>
+<text x="780.0" y="772" font-size="20" fill="#52514e" text-anchor="middle">◀ against hypothesis</text>
+<text x="1220.0" y="772" font-size="20" fill="#52514e" text-anchor="middle">supports hypothesis ▶</text>
+<text x="80" y="338" font-size="26" fill="#0b0b0b">Original run (3 seeds)</text>
+<text x="80" y="374" font-size="22" fill="#52514e">mean +0.51 · p ≈ 0.09 (exploratory)</text>
+<line x1="1144.1" y1="290" x2="1144.1" y2="370" stroke="#2a78d6" stroke-width="6" stroke-linecap="round"/>
+<circle cx="1436.9" cy="316" r="11" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="998.5" cy="330" r="11" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="996.8" cy="344" r="11" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="80" y="558" font-size="26" fill="#0b0b0b">Pre-registered replication (6 new seeds)</text>
+<text x="80" y="594" font-size="22" fill="#52514e">mean -0.01 · p = 0.52</text>
+<line x1="935.7" y1="510" x2="935.7" y2="590" stroke="#8a8984" stroke-width="6" stroke-linecap="round"/>
+<circle cx="849.7" cy="536" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="841.7" cy="550" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="1049.4" cy="564" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="741.6" cy="536" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="1075.9" cy="550" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="1055.9" cy="564" r="11" fill="#8a8984" stroke="#fcfcfb" stroke-width="2"/>
+<text x="80" y="878" font-size="18" fill="#8a8984">Procedural games · 35-param context-conditioned vs 7-param fixed search controller · N = 1 vs 16 game types at equal compute</text>
+</svg>

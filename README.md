@@ -1,7 +1,12 @@
 # Does search skill learned in games transfer to math?
 
-A small, fully reproducible experiment. It contains a pre-registered prediction,
-which failed.
+A small, fully reproducible experiment in two rounds. Each round makes a
+pre-registered prediction, and neither survived.
+
+- **V1** (this page): does search skill learned in games transfer to math?
+- **[V2](v2/README.md)**: can a controller that reads its own search landscape turn
+  diverse procedural games into transfer? It passed its pre-registered test, then
+  **failed a pre-registered replication**.
 
 ![Results: games-trained controller vs. classic search](figures/transfer.png)
 
@@ -166,6 +171,16 @@ python3 figures/make_chart.py  # chart (PNG rendering needs Node + Playwright)
 | `sensitivity.py`, `ablation.py` | post-hoc diagnostics |
 | `results.json`, `transfer_matrix.json`, `plateau_test.json` | raw results (per-instance expansions included) |
 | `RESULTS.md` | every table |
+
+## V2 follow-up
+
+[**V2**](v2/README.md) tested the most promising explanation for V1's
+mixed results. The idea: negative transfer is interference between
+regime-specific skills, and a controller that identifies its regime in-context
+could fix it when trained on many procedurally generated games. The pre-registered
+test passed on 3 seeds, but a pre-registered replication on 6 fresh seeds found
+nothing (p = 0.52). Across all 9 seeds, procedural games transferred *worse* than
+V1's three hand-made games.
 
 ## Next ideas
 
