@@ -33,9 +33,14 @@ N_TRAIN = 8 if SMOKE else 24
 POP, ELITE, ITERS = (8, 2, 2) if SMOKE else (24, 6, 16)
 NS = [1, 4] if SMOKE else [1, 2, 4, 8, 16]
 SEEDS = [0] if SMOKE else [0, 1, 2]
+# replication override, e.g. NS=1,16 SEEDS=3,4,5,6,7,8 OUT=replication_v2.json
+if os.environ.get("NS"):
+    NS = [int(x) for x in os.environ["NS"].split(",")]
+if os.environ.get("SEEDS"):
+    SEEDS = [int(x) for x in os.environ["SEEDS"].split(",")]
 MODES = ["fixed", "online", "random"]
 TARGETS = list(GAMES) if SMOKE else list(MATH) + list(GAMES)
-OUT = os.path.join(HERE, "smoke_v2.json" if SMOKE else "results_v2.json")
+OUT = os.path.join(HERE, os.environ.get("OUT", "smoke_v2.json" if SMOKE else "results_v2.json"))
 
 _cache = {}
 

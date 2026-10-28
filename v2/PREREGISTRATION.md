@@ -59,3 +59,18 @@ than runs before it. Fix: obstacles now use `zlib.crc32` (deterministic), and th
 whole grid is rerun from scratch with `PYTHONHASHSEED=0`. The aborted partial
 results are kept, **unanalyzed and unread**, in `results_v2_ABORTED_unanalyzed.json`.
 Hypotheses, design, predictions and analysis code are unchanged.
+
+## Confirmatory replication (registered after V2 results, before the replication ran)
+
+The V2 grid met the pre-registered criteria (P1–P3 hold, P4 fails), but the
+effects were about the size of the seed noise: an exploratory sign-flip test of
+the P2 interaction gave p ≈ 0.09 with 3 seeds. The replication decides whether
+the effect is real.
+
+- **Fresh seeds 3–8.** Both the game types and the CEM noise are new. N ∈ {1, 16},
+  all three modes, with code and compute identical to V2.
+- **Tests:** one-sided exact sign-flip permutation tests over the 6 seeds
+  (`analyze_replication.py`).
+- **Criteria:** R1, online(16) > fixed(16); R2, the interaction; R3, online(16) >
+  random-context(16). Each needs a positive mean and p < 0.05.
+- **Verdict:** **replicated only if R1 and R2 hold.** Results will be published either way.
